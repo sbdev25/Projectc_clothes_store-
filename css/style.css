@@ -166,5 +166,18 @@ body .header .menu-icon a:hover  {
     display: none;
     
 }
+    /* SIGN UP WITH EMAIL SECTION   */
+.newsletter {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url("/i;qges/b14.png");
+    background-repeat: no-repeat;
+    background-position: 20% 30% ;
+    background-color: var(--green_to_blue);
+    padding: 40px 80px;
+
+}
 
 }
