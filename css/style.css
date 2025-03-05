@@ -809,3 +809,133 @@ footer h3 {
     font-family: var(--font_third);
     text-align: center;
 }
+
+/* khalil was here */
+
+/* single product  */
+#prodetails {
+    margin: 70px 40px;
+    display: flex;
+}
+#prodetails .single-pro-image {
+    width: 40%;
+    margin-right: 50px;
+}
+.small-images-grp {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    cursor: pointer;
+}
+#prodetails .single-pro-details {
+    width: 50%;
+    padding-top: 50px ;
+}
+#prodetails .single-pro-details h4 {
+    margin: 40px 0 20px 0 ;
+}
+#prodetails .single-pro-details h2 {
+    font-size: 30px;
+}
+#prodetails .single-pro-details select{
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#prodetails .single-pro-details input {
+    width: 50px;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right:10px;
+}
+#prodetails button {
+    padding: 13px 10px;
+    border: solid 2px transparent;
+    border-radius: 5px;
+    background-color: #172d3b;
+    color: white;
+    font-family: var(--font_third);
+    font-size: 14px;
+    cursor: pointer;
+}
+#prodetails button:hover {
+    border: solid 2px var(--cold_black);
+    color: var(--cold_black);
+    background-color: var(--white);
+}
+#prodetails .single-pro-details span {
+    line-height: 25px;
+}
+#mainimage {
+    height: 500px;
+}
+
+
+/* The Checkout Page */
+.product-countainer {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.container-kh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--dark_blue);
+    
+}
+.container-kh form {
+    width: 700px;
+    padding: 40px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+.container-kh form .row {
+    display: flex;
+    gap: 15px;
+}
+.container-kh form .row .coloumn-kh {
+    flex: 1 1 200px;
+}
+.container-kh form .row .coloumn-kh .Title {
+     font-size: 20px;
+     color: #222;
+     text-transform: uppercase ;
+     margin-bottom: 10px;
+}
+.container-kh form .row .coloumn-kh .input-box-kh {
+    margin: 15px 0;
+}
+.input-box-kh input {
+    width: 100% ;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.input-box-kh span {
+    display: block;
+    margin-bottom: 10px; 
+    font-family: var(--font_third);
+}
+.coloumn-kh .flex {
+    display: flex;
+    gap: 15px;
+}
+.container-kh .btn {
+    width: 100%;
+    background-color: #172d3b;
+    color: #d9d9d9;
+    padding: 10px 20px;
+}
+.container-kh .btn:hover {
+    background-color: rgb(205, 190, 190);
+    border-color:var(--green_to_blue) ;
+    border: 1px solid;
+    color: var(--green_to_blue);
+}
+
+
