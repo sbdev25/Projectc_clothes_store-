@@ -72,6 +72,7 @@ body .header {
     animation: colorchange 12s; 
    animation-iteration-count: infinite;
     position: relative;
+    z-index: 4;
     
 }
 @keyframes colorchange {
