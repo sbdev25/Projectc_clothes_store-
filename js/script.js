@@ -28,10 +28,10 @@ function updateCartButton() {
 
 window.addEventListener("load", updateCartButton);
 
-// Button Click Event
 button.addEventListener("click", function () {
     const productName = document.getElementById("productName").innerText;
     const productImage = document.getElementById("mainimage").src;
+    const productPrice = parseFloat(document.getElementById("productPrice").innerText); // Assuming you have a product price
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let productIndex = cart.findIndex(product => product.name === productName);
@@ -43,8 +43,8 @@ button.addEventListener("click", function () {
         button.innerHTML = "Add to cart";
         alert("Product removed from cart!");
     } else {
-        // Add product to cart
-        cart.push({ name: productName, image: productImage });
+        // Add product with quantity
+        cart.push({ name: productName, image: productImage, price: productPrice, quantity: 1 });
         button.classList.add("added-to-cart");
         button.innerHTML = "Remove the product";
         alert("Product added to cart!");
@@ -80,28 +80,126 @@ window.addEventListener("load", function () {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-const cartContainer = document.querySelector(".products_price"); // Cart display section
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    function loadCart() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartContainer = document.querySelector(".products_price");
+    
+        cartContainer.innerHTML = ""; // Clear previous content
+    
+        let subtotal = 0;
+        let taxRate = 0.1; // 10% tax (modify as needed)
+    
+        if (cart.length === 0) {
+            cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+            document.getElementById("subtotal-price").innerText = "0 DA";
+            document.getElementById("tax-price").innerText = "0 DA";
+            document.getElementById("total-price").innerText = "0 DA";
+            return;
+        }
+    
+        cart.forEach((product, index) => {
+            const productDiv = document.createElement("div");
+            productDiv.classList.add("title_option_second");
+            
+            let productTotal = product.price * product.quantity;
+            subtotal += productTotal;
+    
+            productDiv.innerHTML = `
+                <div class="product_info">
+                    <img src="${product.image}" alt="${product.name}" width="100px" height="100px">
+                    <div class="text_prod">
+                        <h2>${product.name}</h2>
+                        <button class="remove-btn" data-index="${index}">Remove</button>
+                    </div>
+                </div>
+                <div class="quantity-controls">
+                    <button class="decrease-btn" data-index="${index}">-</button>
+                    <input type="number" value="${product.quantity}" min="1" class="quantity-input" data-index="${index}">
+                    <button class="increase-btn" data-index="${index}">+</button>
+                </div>
+                <h2 class="product-price">${productTotal.toFixed(2)} DA</h2>
+            `;
+    
+            cartContainer.appendChild(productDiv);
+        });
+    
+        // Calculate Tax and Total
+        let tax = subtotal * taxRate;
+        let total = subtotal + tax;
+    
+        // Update UI
+        document.getElementById("subtotal-price").innerText = `${subtotal.toFixed(2)} DA`;
+        document.getElementById("tax-price").innerText = `${tax.toFixed(2)} DA`;
+        document.getElementById("total-price").innerText = `${total.toFixed(2)} DA`;
+    
+        attachEventListeners();
+    }
+    // window.addEventListener("load", loadCart);    
+
+
+
+    function attachEventListeners() {
+        document.querySelectorAll(".increase-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                let index = this.dataset.index;
+                cart[index].quantity++;
+                localStorage.setItem("cart", JSON.stringify(cart));
+                loadCart(); // Reload the cart to update UI
+            });
+        });
+    
+        document.querySelectorAll(".decrease-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                let index = this.dataset.index;
+                if (cart[index].quantity > 1) {
+                    cart[index].quantity--;
+                } else {
+                    cart.splice(index, 1); // Remove product if quantity reaches 0
+                }
+                localStorage.setItem("cart", JSON.stringify(cart));
+                loadCart();
+            });
+        });
+    
+        document.querySelectorAll(".remove-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                let index = this.dataset.index;
+                cart.splice(index, 1);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                loadCart();
+            });
+        });
+    
+        document.querySelectorAll(".quantity-input").forEach(input => {
+            input.addEventListener("change", function () {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                let index = this.dataset.index;
+                let newQuantity = parseInt(this.value);
+    
+                if (newQuantity > 0) {
+                    cart[index].quantity = newQuantity;
+                } else {
+                    cart.splice(index, 1);
+                }
+    
+                localStorage.setItem("cart", JSON.stringify(cart));
+                loadCart();
+            });
+        });
+    }
+// Load cart when the page loads
+window.addEventListener("load", loadCart);    
+
+
+
+        }); 
         
-            if (cart.length === 0) {
-                cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-            } else {
-                cart.forEach((product, index) => {
-                    const productDiv = document.createElement("div");
-                    productDiv.classList.add("title_option_second");
-                    productDiv.innerHTML = `
-                        <div class="product_info">
-                            <img src="${product.image}" alt="${product.name}" width="100px" height="100px">
-                            <div class="text_prod">
-                                <h2>${product.name}</h2>
-                                <button onclick="removeFromCart(${index})">Remove</button>
-                            </div>
-                        </div>
-                    `;
-                    cartContainer.appendChild(productDiv);
-                });
-            }
-        });   
+        
+
+        
 function removeFromCart(index) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.splice(index, 1); // Remove item
