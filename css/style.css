@@ -1353,3 +1353,68 @@ footer h3 {
  .cart_container .cart_page .title_option_second .product_info h2 {
     max-width: 100px;
  }
+
+/* The Checkout Page */
+.product-countainer {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.container-kh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--dark_blue);
+    
+}
+.container-kh form {
+    width: 700px;
+    padding: 40px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+.container-kh form .row {
+    display: flex;
+    gap: 15px;
+}
+.container-kh form .row .coloumn-kh {
+    flex: 1 1 200px;
+}
+.container-kh form .row .coloumn-kh .Title {
+     font-size: 20px;
+     color: #222;
+     text-transform: uppercase ;
+     margin-bottom: 10px;
+}
+.container-kh form .row .coloumn-kh .input-box-kh {
+    margin: 15px 0;
+}
+.input-box-kh input {
+    width: 100% ;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.input-box-kh span {
+    display: block;
+    margin-bottom: 10px; 
+    font-family: var(--font_third);
+}
+.coloumn-kh .flex {
+    display: flex;
+    gap: 15px;
+}
+.container-kh .btn {
+    width: 100%;
+    background-color: #172d3b;
+    color: #d9d9d9;
+    padding: 10px 20px;
+}
+.container-kh .btn:hover {
+    background-color: rgb(205, 190, 190);
+    border-color:var(--green_to_blue) ;
+    border: 1px solid;
+    color: var(--green_to_blue);
+}
