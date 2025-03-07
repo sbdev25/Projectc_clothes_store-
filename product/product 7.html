@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clothing Store ">
+    <title>Izhomes | Watches</title>
+
+
+
+
+    
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+     <!--font family   -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Fira+Code:wght@300..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:wght@200;400;500;600;700;800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+     
+     <!-- Helvitica  font  -->
+     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
+                
+
+     <!-- optima  font -->
+     <link href="https://fonts.cdnfonts.com/css/optima" rel="stylesheet">
+     <style>
+        @import url('https://fonts.cdnfonts.com/css/optima');
+
+        @import url('https://fonts.cdnfonts.com/css/baskerville');
+
+        @import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');
+
+                
+
+
+        </style>
+
+        <!-- Baskerville  -->
+    <link href="https://fonts.cdnfonts.com/css/baskerville" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css"> <!-- Link to CSS -->
+    <script defer src="js/script.js"></script> <!-- Link to JavaScript -->
+</head>
+
+
+
+        <body>
+            <div class="cont-prod">
+                <nav class="header">
+                    <div class="logo"><a href="index.html">IZHOMME</a></div>
+                    <div class="menu-icon" onclick="dispadd()" id="menico"><i class="fa-solid fa-list"></i></div>
+                    <ul class="menu"  onclick="disprv()" id="listhead">
+                        <li id="exitmenu"><i class="fa-solid fa-xmark"></i></li>
+                        <a href="index.html" class="home"> <li class="menu-item" >Home</li></a>
+                        <!-- <a href="checkout.html"> <li class="menu-item" > Payement</li></a> -->
+                        <li  class="menu-item"><a href="">Cart<i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li class="menu-item login-icon"><a href="#">Login<i class="fa-solid fa-circle-user"></i></a></li>
+                    </ul>
+                </nav>
+                <section id="prodetails">
+                    <div class="single-pro-image"> 
+                        <img src="../products-pics/Geneva Classic Watch (Waterproof).webp" alt="big image" width="100%" id="mainimage">
+                        <div class="small-images-grp">
+                            <div class="small-img-col">
+                                <img src="../products-pics/Geneva Classic Watch (Waterproof).webp" alt="" width="100%" class="smallimage">
+                            </div>
+                            <div class="small-img-col">
+                                <img src="../products-pics/Geneva Classic Watch (Waterproof)(3).webp" alt="" width="100%" class="smallimage">
+                            </div>
+                            <div class="small-img-col">
+                                <img src="../products-pics/Geneva Classic Watch (Waterproof)(5).webp" alt="" width="100%" class="smallimage">
+                            </div>
+                            <div class="small-img-col">
+                                <img src="../products-pics/Geneva Classic Watch (Waterproof)(2).webp" alt="" width="100%" class="smallimage">
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="single-pro-details">
+                        <h6>Home | Watches</h6>
+                        <h4> Geneva Classic Watch</h4>
+                        <h2> 16000 DA <del>20000 DA</del>  </h2>
+                        <input type="number" value="1">
+                        <button>Add To Cart</button>
+                        <h4>Product Details</h4>
+                        <span>HIGH QUALITY MATERIAL - FOR LESS
+                            "Made from the finest, high-quality material, this watch is the epitome of luxury and durability."
+                            
+                            Crafted from premium material, this watch offers an incredibly luxury look that feels amazing on the wrist, without over-paying. It is easy to put it with its click on system, and the size is fully adjustable. Next to that, this watch is waterproof. We will ship it with a free size adjuster</span>
+                    </div>
+                </section>
+    
+                <script>
+                    var mainimage = document.getElementById("mainimage");
+                    var smallimage =document.getElementsByClassName("smallimage");
+    
+                    smallimage[0].onclick = function () {
+                        mainimage.src= smallimage[0].src
+                    }
+                    smallimage[1].onclick = function () {
+                        mainimage.src= smallimage[1].src
+                    }
+                    smallimage[2].onclick = function () {
+                        mainimage.src= smallimage[2].src
+                    }
+                    smallimage[3].onclick = function () {
+                        mainimage.src= smallimage[3].src
+                    }
+                </script>    
+            </div>
+        </body>
+    </html>
