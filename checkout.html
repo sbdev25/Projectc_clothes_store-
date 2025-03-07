@@ -37,19 +37,17 @@
                 <!-- Baskerville  -->
             <link href="https://fonts.cdnfonts.com/css/baskerville" rel="stylesheet">
             <link rel="stylesheet" href="/Projectc_clothes_store-/css/style.css">
-            <script defer src="js/script.js"></script> <!-- Link to JavaScript -->
+            
         </head>
         <body>
-            <nav class="header">
-
-
+            <nav class="header_product">
                 <div class="logo"><a href="index.html">IZHOMME</a></div>
                 <div class="menu-icon" onclick="dispadd()" id="menico"><i class="fa-solid fa-list"></i></div>
                 <ul class="menu"  onclick="disprv()" id="listhead">
                     <li id="exitmenu"><i class="fa-solid fa-xmark"></i></li>
-                    <a href="index.html" class="home"> <li class="menu-item" >Home</li></a>
+                    <a href="./index.html" class="home"> <li class="menu-item" >Home</li></a>
                     <!-- <a href="checkout.html"> <li class="menu-item" > Payement</li></a> -->
-                    <li  class="menu-item"><a href="cart.html">Cart<i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li  class="menu-item"><a href="./cart.html">Cart<i class="fa-solid fa-cart-shopping"></i></a></li>
                     <li class="menu-item login-icon"><a href="#">Login<i class="fa-solid fa-circle-user"></i></a></li>
                 </ul>
             </nav>
@@ -60,28 +58,28 @@
                         <h3 class="Title">Biling Adresse</h3>
                         <div class="input-box-kh">
                             <span>Full Name :</span>
-                            <input type="text" placeholder="Enter your full name ">
+                            <input type="text" placeholder="Enter your full name " id="fn">
                         </div>
                         <div class="input-box-kh"> 
                             <span>Email:</span>
-                            <input type="email" placeholder="Enter your email ">
+                            <input type="email" placeholder="Enter your email " id="email">
                         </div>
                         <div class="input-box-kh">
                             <span>Adress :</span>
-                            <input type="text" placeholder="home - street - Road ">
+                            <input type="text" placeholder="home - street - Road " id="address">
                         </div>
                         <div class="input-box-kh">
                             <span>City :</span>
-                            <input type="text" placeholder=" The name of Your City ">
+                            <input type="text" placeholder=" The name of Your City " id="city">
                         </div>
                          <div class="flex">
                             <div class="input-box-kh">
                                 <span>State :</span>
-                                <input type="text" placeholder="Enter your Country ">
+                                <input type="text" placeholder="Enter your Country " id="state">
                             </div>
                             <div class="input-box-kh">
                                 <span>Zip Code :</span>
-                                <input type="number" placeholder=" 123 456 ">
+                                <input type="number" placeholder=" 123 456 " id="zipcode">
                             </div>
                         </div>
 
@@ -90,49 +88,40 @@
                         <h3 class="Title">Payment</h3>
                         <div class="input-box-kh">
                             <span>Cards Accepted :</span>
-                            <img src="./images/imgcards.png" alt="">
+                            <img src="./images/chekout image .jpg" alt="" id="">
                         </div>
                         <div class="input-box-kh"> 
                             <span>Name On Card:</span>
-                            <input type="email" placeholder="Mr. Khalil khalfi ">
+                            <input type="email" placeholder="Mr. Khalil khalfi " id="namcard">
                         </div>
                         <div class="input-box-kh">
                             <span>Credit Card Number :</span>
-                            <input type="number" placeholder="1111 2222 3333">
+                            <input type="number" placeholder="1111 2222 3333" id="crednum">
                         </div>
                         <div class="input-box-kh">
                             <span>Exp.Month :</span>
-                            <input type="text" placeholder=" June ">
+                            <input type="text" placeholder=" June " id="expmonth">
                         </div>
                          <div class="flex">
                             <div class="input-box-kh">
                                 <span>Exp. Year :</span>
-                                <input type="number" placeholder="2025 ">
+                                <input type="number" placeholder="2025 " id="exp-year">
                             </div>
                             <div class="input-box-kh">
                                 <span>CVV :</span>
-                                <input type="number" placeholder=" 123 ">
+                                <input type="number" placeholder=" 123 " id="cvv">
                             </div>
                         </div>
 
                     </div>
                 </div>
 
-                <button type="submit" class="btn">Submit</button>
+                <button type="submit" class="btn" id="submit">Submit</button>
             </form>
             </div>
         </section>
         <!-- the Sign up  -->
-        <section class="newsletter">
-            <div class="newstext">
-                <h4>Sing Up For Newsletter</h4>
-                <p>Get E-mail Updates about our latest shop and <br><span>special offers.</span></p>
-            </div>
-            <div class="form-kh">
-                <input type="email" placeholder="Your Email Adresse" required>
-                <button type="submit" class="button-kh">Sign Up</button>
-            </div>
-         </section>
+       
                         <!-- the footer -->
             <footer>
 
@@ -189,5 +178,6 @@
                 </div>
 
             </footer>
+            <script defer src="./js/script2.js"></script> <!-- Link to JavaScript -->
         </body>
     </html>

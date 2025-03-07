@@ -1114,9 +1114,14 @@ footer h3 {
 .container-kh form .row {
     display: flex;
     gap: 15px;
+    width: 100%;
+    font-family: var(--font_secondary);
+    
 }
 .container-kh form .row .coloumn-kh {
     flex: 1 1 200px;
+    width: 100%;
+    font-family: var(--font_primary);
 }
 .container-kh form .row .coloumn-kh .Title {
      font-size: 20px;
@@ -1155,6 +1160,15 @@ footer h3 {
     border: 1px solid;
     color: var(--green_to_blue);
 }
+
+/* chekout responsive  */
+@media (max-width:700px){
+    .container-kh form .row {
+        flex-direction: column;
+    }
+}
+
+
 
 
 /* product page responsive */
