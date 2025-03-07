@@ -11,10 +11,10 @@ if (localStorage.getItem("cartAdded") === "true") {
 
 
   // Function to check cart and update button
-function updateCartButton() {
+  function updateCartButton() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     const productName = document.getElementById("productName").innerText;
-
+    
     let productIndex = cart.findIndex(product => product.name === productName);
     
     if (productIndex !== -1) {
@@ -28,10 +28,13 @@ function updateCartButton() {
 
 window.addEventListener("load", updateCartButton);
 
+window.addEventListener("load", updateCartButton);
+
 button.addEventListener("click", function () {
     const productName = document.getElementById("productName").innerText;
     const productImage = document.getElementById("mainimage").src;
-    const productPrice = parseFloat(document.getElementById("productPrice").innerText); // Assuming you have a product price
+    const productPrice = parseFloat(document.getElementById("productPrice").innerText);
+    const quantity = parseInt(document.getElementById("quantity").value) || 1; // Ensure quantity is a number
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let productIndex = cart.findIndex(product => product.name === productName);
@@ -44,14 +47,15 @@ button.addEventListener("click", function () {
         alert("Product removed from cart!");
     } else {
         // Add product with quantity
-        cart.push({ name: productName, image: productImage, price: productPrice, quantity: 1 });
+        cart.push({ name: productName, image: productImage, price: productPrice, quantity: quantity });
         button.classList.add("added-to-cart");
         button.innerHTML = "Remove the product";
         alert("Product added to cart!");
     }
 
-    // Save updated cart to localStorage
+    // Save to localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartButton(); // Ensure the button updates correctly
 });
 
         
@@ -87,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
         cartContainer.innerHTML = ""; // Clear previous content
     
         let subtotal = 0;
-        let taxRate = 0.1; // 10% tax (modify as needed)
+        let taxRate = 0.1; // 10% tax
     
         if (cart.length === 0) {
             cartContainer.innerHTML = "<p>Your cart is empty.</p>";
@@ -122,80 +126,74 @@ document.addEventListener("DOMContentLoaded", function() {
     
             cartContainer.appendChild(productDiv);
         });
-    
-        // Calculate Tax and Total
+
+        updateCartTotals(cart, taxRate);
+        attachEventListeners();
+    }
+
+    function updateCartTotals(cart, taxRate) {
+        let subtotal = cart.reduce((sum, product) => sum + product.price * product.quantity, 0);
         let tax = subtotal * taxRate;
         let total = subtotal + tax;
-    
-        // Update UI
+
         document.getElementById("subtotal-price").innerText = `${subtotal.toFixed(2)} DA`;
         document.getElementById("tax-price").innerText = `${tax.toFixed(2)} DA`;
         document.getElementById("total-price").innerText = `${total.toFixed(2)} DA`;
-    
-        attachEventListeners();
     }
-    // window.addEventListener("load", loadCart);    
-
-
 
     function attachEventListeners() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
         document.querySelectorAll(".increase-btn").forEach(button => {
             button.addEventListener("click", function () {
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
                 let index = this.dataset.index;
                 cart[index].quantity++;
                 localStorage.setItem("cart", JSON.stringify(cart));
-                loadCart(); // Reload the cart to update UI
+                loadCart();
             });
         });
-    
+
         document.querySelectorAll(".decrease-btn").forEach(button => {
             button.addEventListener("click", function () {
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
                 let index = this.dataset.index;
                 if (cart[index].quantity > 1) {
                     cart[index].quantity--;
                 } else {
-                    cart.splice(index, 1); // Remove product if quantity reaches 0
+                    cart.splice(index, 1); // Remove if quantity reaches 0
                 }
                 localStorage.setItem("cart", JSON.stringify(cart));
                 loadCart();
             });
         });
-    
+
         document.querySelectorAll(".remove-btn").forEach(button => {
             button.addEventListener("click", function () {
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
                 let index = this.dataset.index;
                 cart.splice(index, 1);
                 localStorage.setItem("cart", JSON.stringify(cart));
                 loadCart();
             });
         });
-    
+
         document.querySelectorAll(".quantity-input").forEach(input => {
             input.addEventListener("change", function () {
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
                 let index = this.dataset.index;
                 let newQuantity = parseInt(this.value);
-    
+
                 if (newQuantity > 0) {
                     cart[index].quantity = newQuantity;
                 } else {
                     cart.splice(index, 1);
                 }
-    
+
                 localStorage.setItem("cart", JSON.stringify(cart));
                 loadCart();
             });
         });
     }
-// Load cart when the page loads
-window.addEventListener("load", loadCart);    
 
-
-
-        }); 
+    window.addEventListener("load", loadCart);
+});
         
         
 
