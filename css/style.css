@@ -674,7 +674,23 @@ body .container-of-products {
     margin: auto;
 }
 
+.near-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 100%;
+    height: 300px;
+    transition: 0.2s ease;
+    margin: auto;
+    opacity: 0;
 
+    transition: opacity 0.4 ease-out;
+}
+.near-img:hover{
+    opacity: 1;
+}
 .size-opt {
     background-color: white;
     color: #000000;
