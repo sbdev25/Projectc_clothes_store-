@@ -1102,7 +1102,7 @@ footer h3 {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: var(--dark_blue);
+    background-color: var(--green_to_blue);
 
 }
 .container-kh form {
