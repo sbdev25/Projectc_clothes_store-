@@ -10,117 +10,125 @@ if (localStorage.getItem("cartAdded") === "true") {
 
 
 
-  // the product added in the cart page 
-  
+  // Function to check cart and update button
+function updateCartButton() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const productName = document.getElementById("productName").innerText;
 
-// Add event listener to toggle state
-button.addEventListener("click", function () {
- 
-    if (button.classList.contains("added-to-cart")) {
-        button.classList.remove("added-to-cart");
-        button.innerHTML="Add to cart "
-        localStorage.setItem("cartAdded", "false"); // Remove from localStorage
-         if(button.getAttribute("data-num")==1){
-           
-           prod1.classList.remove("visible");
-        console.log("ok")
-        }else{
-            if(button.getAttribute("data-num")==2){
-                prod2.classList.remove("visible");
-            }else{
-                if(button.getAttribute("data-num")==3){
-                    prod3.classList.remove("visible");
-                }else{
-                    if(button.getAttribute("data-num")==4){
-                        prod4.classList.remove("visible");
-                    }else{
-                        console.log("ok")
-                        // if(button.getAttribute("data-num")==5){
-                        //     prod5.classList.remove("visible");
-                        // }else{
-                        //     if(button.getAttribute("data-num")==6){
-                        //         prod6.classList.remove("visible");
-                        //     }else{
-                        //         if(button.getAttribute("data-num")==7){
-                        //             prod7.classList.remove("visible");
-                        //         }else{
-                        //             if(button.getAttribute("data-num")==8){
-                        //                 prod8.classList.remove("visible");
-                        //             }else{
-                        //                 if(button.getAttribute("data-num")==9){
-                        //                     prod9.classList.remove("visible");
-                        //                 }
-                        //             }
-                        //         }
-                        //     }
-                        // }
-                    }
-                }
-            }
-        }
-        
-
-
-
-
-
+    let productIndex = cart.findIndex(product => product.name === productName);
+    
+    if (productIndex !== -1) {
+        button.classList.add("added-to-cart");
+        button.innerHTML = "Remove the product";
     } else {
-        button.classList.add("added-to-cart"); 
-        button.innerHTML="remove the product "
-        localStorage.setItem("cartAdded", "true"); // Save in localStorage
-        if(button.getAttribute("data-num")==1){
-            console.log(prod1)
-            
-            prod1.classList.add("visible");
-            
-        }else{
-            if(button.getAttribute("data-num")==2){
-                prod2.classList.add("visible");
-            }else{
-                if(button.getAttribute("data-num")==3){
-                    prod3.classList.add("visible");
-                }else{
-                    if(button.getAttribute("data-num")==4){
-                        prod4.classList.add("visible");
-                    }else{
-                        if(button.getAttribute("data-num")==5){
-                            prod5.classList.add("visible");
-                        }else{
-                            if(button.getAttribute("data-num")==6){
-                                prod6.classList.add("visible");
-                            }else{
-                                if(button.getAttribute("data-num")==7){
-                                    prod7.classList.add("visible");
-                                }else{
-                                    if(button.getAttribute("data-num")==8){
-                                        prod8.classList.add("visible");
-                                    }else{
-                                        if(button.getAttribute("data-num")==9){
-                                            prod9.classList.add("visible");
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        button.classList.remove("added-to-cart");
+        button.innerHTML = "Add to cart";
     }
+}
+
+window.addEventListener("load", updateCartButton);
+
+// Button Click Event
+button.addEventListener("click", function () {
+    const productName = document.getElementById("productName").innerText;
+    const productImage = document.getElementById("mainimage").src;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let productIndex = cart.findIndex(product => product.name === productName);
+
+    if (productIndex !== -1) {
+        // Remove product from cart
+        cart.splice(productIndex, 1);
+        button.classList.remove("added-to-cart");
+        button.innerHTML = "Add to cart";
+        alert("Product removed from cart!");
+    } else {
+        // Add product to cart
+        cart.push({ name: productName, image: productImage });
+        button.classList.add("added-to-cart");
+        button.innerHTML = "Remove the product";
+        alert("Product added to cart!");
+    }
+
+    // Save updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+});
+
+        
+  
+            
+            
+        
+    
   
 
 });
+window.addEventListener("load", function () {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const productName = document.getElementById("productName").innerText;
 
-
-
-
-
-
-
-   
-
-
+    let productIndex = cart.findIndex(product => product.name === productName);
+    
+    if (productIndex !== -1) {
+        button.classList.add("added-to-cart");
+        button.innerHTML = "Remove the product";
+    } else {
+        button.classList.remove("added-to-cart");
+        button.innerHTML = "Add to cart";
+    }
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+const cartContainer = document.querySelector(".products_price"); // Cart display section
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+            } else {
+                cart.forEach((product, index) => {
+                    const productDiv = document.createElement("div");
+                    productDiv.classList.add("title_option_second");
+                    productDiv.innerHTML = `
+                        <div class="product_info">
+                            <img src="${product.image}" alt="${product.name}" width="100px" height="100px">
+                            <div class="text_prod">
+                                <h2>${product.name}</h2>
+                                <button onclick="removeFromCart(${index})">Remove</button>
+                            </div>
+                        </div>
+                    `;
+                    cartContainer.appendChild(productDiv);
+                });
+            }
+        });   
+function removeFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1); // Remove item
+    localStorage.setItem("cart", JSON.stringify(cart)); // Update storage
+    location.reload(); // Refresh page to update UI
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -228,6 +236,7 @@ document.querySelectorAll(".clickable").forEach(div => {
 // clikc on addtocart
 
  // Select the button
+
 
 
 

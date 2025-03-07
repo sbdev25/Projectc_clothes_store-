@@ -1258,7 +1258,7 @@ footer h3 {
     overflow: scroll;
 }
 .cart_container .cart_page .title_option_second {
-    display: none;
+    display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 30px 20px;
@@ -1267,9 +1267,7 @@ footer h3 {
     color: white;
     
 }
-.cart_container .cart_page .title_option_second.visible  {
-display: flex;
-}
+
 .cart_container .cart_page .title_option_second .product_info {
     display: flex;
     gap: 20px;

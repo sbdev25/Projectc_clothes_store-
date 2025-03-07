@@ -39,7 +39,7 @@
         <!-- Baskerville  -->
     <link href="https://fonts.cdnfonts.com/css/baskerville" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css"> <!-- Link to CSS -->
-    <script  src="" defer></script> <!-- Link to JavaScript -->
+    <script  src="./js/script.js" defer></script> <!-- Link to JavaScript -->
 </head>
 <body>
     <nav class="header_product">
@@ -55,70 +55,32 @@
     </nav>
     <div class="cart_container">
         <section class="cart_page">
-
             <div class="title_option">
                 <h2>Product</h2>
                 <h2>Quantity</h2>
                 <h2>Price</h2>
             </div>
-
-            <div class="products_price">
-                <div class="title_option_second" id="prd3">
-                    <div class="product_info">
-                        <img src="../products-pics/Old Money Linen Combo (Longsleeve) (color2).webp" alt="" width="100px" height="100px">
-                        <div class="text_prod">
-                            <h2>Old Money Linen Combo</h2>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                    
-                    <div class="quntit">
-                        <input type="number" value="1">
-                    </div>
-                    
-                    <h2>6000 DA</h2>          
-                </div>
-                <div class="title_option_second" id="prd4">
-                    <div class="product_info">
-                        <img src="../products-pics/Old Money High Suede Loafers(2).webp" alt="" width="100px" height="100px">
-                        <div class="text_prod">
-                            <h2>Old Money High Suede Loafers</h2>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                    
-                    <div class="quntit">
-                        <input type="number" value="1">
-                    </div>
-                    
-                    <h2>12000 DA</h2>          
-                </div>
-                
-                
-            </div>
+    
+            <div class="products_price"></div> <!-- Cart products will be inserted here -->
             
-            
-            
-              
             <div class="total_part">
                 <div class="subtotal">
-                    <h2>subtotal</h2>
-                    <h2>2000 DA</h2>
+                    <h2>Subtotal</h2>
+                    <h2 id="subtotal-price">0 DA</h2>
                 </div>
                 <div class="Tax">
                     <h2>Tax</h2>
-                    <h2>2000 DA</h2>
+                    <h2 id="tax-price">0 DA</h2>
                 </div>
                 <hr>
                 <div class="Total">
                     <h2>Total</h2>
-                    <h2>2000 DA</h2>
+                    <h2 id="total-price">0 DA</h2>
                 </div>
-                <input type="submit" value="proceed to chek out">
+                <input type="submit" value="Proceed to Checkout">
             </div>
-
         </section>
-
+    </div>
     </div>
     </body>
     </html>
