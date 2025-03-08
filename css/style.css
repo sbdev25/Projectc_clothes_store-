@@ -1103,6 +1103,8 @@ footer h3 {
     align-items: center;
     min-height: 100vh;
     background-color: var(--green_to_blue);
+    
+    
 
 }
 .container-kh form {
@@ -1110,6 +1112,7 @@ footer h3 {
     padding: 40px;
     background-color: #f8f9fa;
     border-radius: 5px;
+    
 }
 .container-kh form .row {
     display: flex;
