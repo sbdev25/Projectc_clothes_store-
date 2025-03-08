@@ -1421,3 +1421,279 @@ footer h3 {
 
 
 
+/* zinou
+ */
+/* sign up */
+
+body form {
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--white);
+    height: 100%;
+
+
+}
+
+body .sign-up-form div {
+}
+.all-the-form{
+    display: flex;
+    height: 70%;
+    margin: auto;
+
+    
+}
+form .first-part-form{
+padding: 10px;
+width: 50%;
+
+}
+
+form .secend-part-form{
+width: 50%;
+border-radius: 60px 0 0 60px;
+background-color: black;
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+}
+
+.secend-part-form  .first-p-form {
+color: white;
+font-size: 50px;
+margin: 0;
+padding: 0;
+font-family: var(--font_secondary);
+
+}
+.secend-part-form .secend-p-form{
+    color: white;
+    font-size: smaller;
+    font-family: var(--font_primary);
+}
+.username,
+.user-mail,
+.user-password,
+.re-enter-password,
+.sign-up {
+    margin-block: 10px;
+    width:100%;
+    padding: 12px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--cold_black);
+    font-family:var(--font_secondary);
+}
+
+.username,
+.user-mail,
+.user-password,
+.re-enter-password {
+    background-color: white;
+    font-family:var(--font_secondary)
+}
+
+.sign-up {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+.checkbox-div{
+    margin-block: 5px;
+}
+.sign-up:hover {
+    color: #000000;
+    background-color: white;
+
+}
+
+.log-and-cond {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: rgb(17, 107, 145);
+}
+
+.title-signup {
+    font-family: var(--font_secondary);
+
+    font-size: 16px;
+}
+
+@media (max-width:700px) {
+    .all-the-form {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        padding: 30px;
+        
+    }
+    form .secend-part-form {
+        border-radius:0px ;
+    }
+    form .first-part-form {
+        width: 100%;
+    }
+    form .secend-part-form {
+        width: 100%;
+        padding: 20px;
+    }
+
+}
+
+
+
+/* login */
+   
+body .login-form {
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--white);
+   height: 100%;
+
+}
+
+
+.all-form-login{
+    display: flex;
+    height: 70%;
+    margin: auto;
+    
+}
+form .first-part-form-login{
+    padding: 10px;
+    width: 50%;
+}
+
+form .secend-part-form-login{
+    width: 50%;
+    border-radius: 60px 0 0 60px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.secend-part-form-login .first-p-form-login {
+    color: white;
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font_secondary);
+    text-align: center;
+
+}
+.secend-part-form-login .secend-p-form-login{
+    color: white;
+    font-size: smaller;
+    font-family: var(--font_primary);
+}
+.username-login,
+
+.password,
+
+.sign-in {
+    margin-block: 20px;
+    width:100%;
+    padding: 12px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--cold_black);
+    font-family:var(--font_secondary);
+}
+.username-login , .password{
+    background-color: white;
+    font-family:var(--font_secondary)
+}
+
+
+
+
+.sign-in-form:hover {
+    transform: scale(1.01);
+}
+
+.sign-in {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.sign-in:hover {
+    color: #000000;
+    background-color: white;
+
+}
+
+
+.title-signin {
+    font-family: var(--font_secondary);
+
+    font-size: 16px;
+}
+
+.p-signup {
+    font-size: small;
+}
+
+.Forgot-pass,
+.Register-here {
+    color: rgb(17, 107, 145);
+}
+.remember-me{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.Forgot-pass,
+.Register-here,
+.dont-have-account {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+body .cont-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    width: 100%;
+    height:100vh;
+}
+.login{
+    font-size: smaller;
+}
+
+@media (max-width:700px) {
+    .all-form-login {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        padding: 30px;
+        
+    }
+    form .secend-part-form-login {
+        border-radius:0px ;
+    }
+    form .first-part-form-login {
+        width: 100%;
+    }
+    form .secend-part-form-login {
+        width: 100%;
+        padding: 20px;
+    }
+
+}
