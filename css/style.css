@@ -1145,7 +1145,7 @@ footer h3 {
 .input-box-kh span {
     display: block;
     margin-bottom: 10px; 
-    font-family: var(--font_third);
+    font-family: var(--font_secondary);
 }
 .coloumn-kh .flex {
     display: flex;
