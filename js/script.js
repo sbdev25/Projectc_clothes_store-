@@ -28,13 +28,11 @@ if (localStorage.getItem("cartAdded") === "true") {
 
 window.addEventListener("load", updateCartButton);
 
-window.addEventListener("load", updateCartButton);
-
 button.addEventListener("click", function () {
     const productName = document.getElementById("productName").innerText;
     const productImage = document.getElementById("mainimage").src;
     const productPrice = parseFloat(document.getElementById("productPrice").innerText);
-    const quantity = parseInt(document.getElementById("quantity").value) || 1; // Ensure quantity is a number
+    const quantity = parseInt(document.getElementById("quantity").value) || 1; // if has not it will be 1
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let productIndex = cart.findIndex(product => product.name === productName);
