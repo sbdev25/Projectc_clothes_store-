@@ -252,15 +252,20 @@ function disprv(){
 
 const categoryFilter = document.getElementById("categoryFilter");
 const priceFilter = document.getElementById("priceFilter");
+const fitsFilter=document.getElementById("Fits_size_filter");
+const shoesFilter=document.getElementById("Shoes_size");
 const products = document.querySelectorAll(".product-one-by-one");
 
 function filterProducts() {
     const selectedCategory = categoryFilter.value;
     const selectedPriceRange = priceFilter.value;
+    const selectedfitsSize = fitsFilter.value;
+    const selectedshoesSize = shoesFilter.value;
 
 products.forEach(product => {
     const productCategory = product.getAttribute("data_category");
     const productPrice = parseInt(product.getAttribute("data_price"));
+    const productSize =  product.getAttribute("data_size");
 
     // Check if product matches the selected category
     const categoryMatch = (selectedCategory === "ALL" || selectedCategory === productCategory);
@@ -273,9 +278,13 @@ products.forEach(product => {
         const [minPrice, maxPrice] = selectedPriceRange.split("-").map(Number);
         priceMatch = (productPrice >= minPrice && productPrice <= maxPrice);
     }
+     // Check if product matches the selected Fitssize 
+     const fitsSizeMatch = (selectedfitsSize === "ALL" ||  selectedfitsSize=== productSize);
+      // Check if product matches the selected Shoessize
+      const shoesSizeMatch = (selectedshoesSize === "ALL" ||  selectedshoesSize=== productSize);
 
     // Show or hide product based on both conditions
-    if (categoryMatch && priceMatch) {
+    if (categoryMatch && priceMatch && fitsSizeMatch && shoesSizeMatch) {
         product.style.display = "block";
     } else {
         product.style.display = "none";
@@ -286,6 +295,8 @@ products.forEach(product => {
 }
 categoryFilter.addEventListener("change", filterProducts);
 priceFilter.addEventListener("change", filterProducts);
+fitsFilter.addEventListener("change",filterProducts)
+shoesFilter.addEventListener("change",filterProducts)
 
 // Call filterProducts initially to display the correct products
 filterProducts();

@@ -771,6 +771,7 @@ body aside .title-price {
     .sect_aside {
         display: flex;
         flex-direction: column;
+        margin-bottom: 100px;
     }
     body aside {
         text-align: center;
@@ -808,8 +809,20 @@ body aside .title-price{
 .container-of-products .all-products {
     padding-top: 60px;
 }
+.container-of-products .product-one-by-one {
+    padding: 30px;
+}
 
 }
+
+    /* hover of scale and border of small imgs */
+    .small-img-col{
+        transition: 120ms ease-in;
+    }
+    .small-img-col:hover{
+        border: 2px var(--cold_black) solid;
+        transform: scale(1.1);
+    }
 
 
 
@@ -1020,6 +1033,9 @@ footer h3 {
 
 
 /* single product  */
+ .in-pic {
+    position: relative;
+} 
 #prodetails {
     margin: 70px 40px;
     display: flex;
