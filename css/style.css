@@ -1190,6 +1190,14 @@ footer h3 {
         margin: auto;
         
     }
+    /* hover of scale and border of small imgs */
+.small-img-col{
+    transition: 80ms ease-in;
+}
+.small-img-col:hover{
+    border: 2px var(--cold_black) solid;
+    transform: scale(1.1);
+}
     .small-images-grp {
         display: flex;
         justify-content: space-between;
