@@ -420,7 +420,7 @@ body, h1, p {
 
 /* Hero Section */
 .hero {
-    height: calc(100vh - 55px);
+    height:100vh;
     display: flex;
     justify-content: center;
     align-items: start;
