@@ -1543,16 +1543,17 @@ font-family: var(--font_secondary);
   
     outline: none;
     border: 1px solid var(--cold_black);
-    font-family:var(--font_secondary);
+    /* font-family:var(--font_secondary); */
 }
 
 
 .username,
 .user-mail,
 .user-password,
-.re-enter-password {
+.re-enter-password,
+.password {
     background-color: transparent;
-    font-family:var(--font_secondary)
+    /* font-family:var(--font_secondary) */
 }
 
 
