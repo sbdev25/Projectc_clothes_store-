@@ -980,9 +980,11 @@ footer p {
     font-size: 13px;
     margin: 0 0 8px 0 ;
     font-family: var(--font_third);
+    width: 100%;
+    text-align: center;
 }
 footer a {
-    font-size: 13 px;
+    font-size: 16px;
     text-decoration: none;
     color: var(--green_to_blue);
     margin-bottom: 10px;
@@ -1000,10 +1002,17 @@ footer .icon-kh {
     padding-right: 4px;
     cursor: pointer;
 }
+footer .row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+}
 footer .row img {
     border: 1px solid var(--dark_blue);
     border-radius: 6px;
     margin-bottom: 10px;
+    width: 100%;
 }
 .pay {
     margin-top: 10px ;
@@ -1011,16 +1020,38 @@ footer .row img {
 footer h3 {
     color: var(--dark_blue);
 }
+.copywright {
+    width: 100%;
+
+}
 .copywright p {
     font-size: 20px;
     font-weight: bold;
     color: #353535;
     font-family: var(--font_third);
     text-align: center;
+    padding: 10px;
+    background-color: white;
 }
 
 
-
+/* responsive footer */
+@media (max-width:700px){
+    footer {
+        
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+    
+    
+    }
+    footer .colo .row{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
 
 
 /* product detail  */
@@ -1452,8 +1483,7 @@ body form {
 
 }
 
-body .sign-up-form div {
-}
+
 .all-the-form{
     display: flex;
     height: 70%;
@@ -1499,18 +1529,21 @@ font-family: var(--font_secondary);
     width:100%;
     padding: 12px;
     border-radius: 5px;
+  
     outline: none;
     border: 1px solid var(--cold_black);
     font-family:var(--font_secondary);
 }
 
+
 .username,
 .user-mail,
 .user-password,
 .re-enter-password {
-    background-color: white;
+    background-color: transparent;
     font-family:var(--font_secondary)
 }
+
 
 .sign-up {
     cursor: pointer;
