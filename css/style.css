@@ -1512,8 +1512,7 @@ font-family: var(--font_secondary);
 }
 .username,
 .user-mail,
-.user-password,
-.re-enter-password,
+
 .sign-up {
     margin-block: 10px;
     width:100%;
@@ -1523,14 +1522,24 @@ font-family: var(--font_secondary);
     border: 1px solid var(--cold_black);
     font-family:var(--font_secondary);
 }
+.user-password,
+.re-enter-password{
+    background-color: white;
+    margin-block: 10px;
+    width:100%;
+    padding: 12px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--cold_black);
+
+}
 
 .username,
-.user-mail,
-.user-password,
-.re-enter-password {
+.user-mail {
     background-color: white;
     font-family:var(--font_secondary)
 }
+
 
 .sign-up {
     cursor: pointer;
@@ -1634,9 +1643,6 @@ form .secend-part-form-login{
     font-family: var(--font_primary);
 }
 .username-login,
-
-.password,
-
 .sign-in {
     margin-block: 20px;
     width:100%;
@@ -1646,7 +1652,18 @@ form .secend-part-form-login{
     border: 1px solid var(--cold_black);
     font-family:var(--font_secondary);
 }
-.username-login , .password{
+.password {
+    margin-block: 20px;
+    width:100%;
+    padding: 12px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--cold_black);
+    background-color: white;
+
+    
+}
+.username-login {
     background-color: white;
     font-family:var(--font_secondary)
 }
