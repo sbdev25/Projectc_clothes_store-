@@ -965,9 +965,11 @@ footer h3 {
     font-family: var(--font_primary);
 }
 footer p {
-    font-size: 13px;
+    font-size: 16px;
     margin: 0 0 8px 0 ;
     font-family: var(--font_third);
+     width: 100%;
+    text-align: center;
 }
 footer a {
     font-size: 13 px;
@@ -976,6 +978,12 @@ footer a {
     margin-bottom: 10px;
     font-family: var(--font_third);
 } 
+footer .row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+}
 .colo a:hover {
     color: var(--white);
     background-color: var(--dark_blue);
@@ -992,6 +1000,11 @@ footer .row img {
     border: 1px solid var(--dark_blue);
     border-radius: 6px;
     margin-bottom: 10px;
+     width: 100%;
+}
+.copywright {
+    width: 100%;
+
 }
 .pay {
     margin-top: 10px ;
@@ -1005,6 +1018,25 @@ footer h3 {
     color: #353535;
     font-family: var(--font_third);
     text-align: center;
+    padding: 10px;
+    background-color: white;
+}
+/* responsive footer */
+@media (max-width:700px){
+    footer {
+        
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+    
+    
+    }
+    footer .colo .row{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 
