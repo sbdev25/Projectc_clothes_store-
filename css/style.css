@@ -1755,3 +1755,11 @@ body .cont-form {
     }
 
 }
+footer h1 {
+    font-family:'Helvitica','serif';
+    font-size: 40px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    color: var(--cold_black);
+}
