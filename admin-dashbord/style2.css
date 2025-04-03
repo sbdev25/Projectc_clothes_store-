@@ -1,0 +1,258 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/* Basic Page Styling */
+body {
+    background-color: #f8f9fa;
+    
+}
+
+
+:root {
+    /* colors  */
+    --cold_black:#353535;
+    --green_to_blue:#3c6e71;
+    --white:#ffffff;
+    --grey_cold:#d9d9d9;
+    --dark_blue:#284b63;
+
+
+    /* fonts  */
+
+    --font_primary:'Helvetica',sans-serif ;
+    --font_secondary:'optima',serif;
+    --font_third :'Baskerville',sans-serif;
+
+    /* font weight  */
+--weight-bold: 700;
+--weight-semiBold: 600;
+--weight-regular: 400;
+
+
+/* letter spacing  */
+--traking-n-025: -0.25px;
+--traking-p-05: 0.5px;
+
+
+/* border radius */
+--radius-small: 8px;
+--radius-medium: 12px;
+--radius-large: 16px;
+--radius-extra-large: 32px;
+--radius-full: 1000px;
+--radius-circle: 50%;
+
+/* box shadow  */
+--shadow-1: 0px 2px 4px 0px #00000033;
+--shadow-2: 0px 5px 10px 0px #0000000D;
+--shadow-3: 0px 5px 10px 0px #00000033;
+--shadow-4: 0px 10px 20px 0px #0000001A;
+
+
+}
+
+/* first header  */
+body header {
+    height: 50px;
+    background-color:white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 5%;
+    border-bottom: 1px solid var(--cold_black);
+}
+body header h1 {
+    font-size: 25px;
+    font-family: var(--font_primary);
+    text-transform: capitalize;
+}
+body header button {
+    font-size: 15px;
+    padding: 10px;
+    font-family: var(--font_primary);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background-color:var(--green_to_blue);
+    text-align: center;
+    color: white;
+}
+body header button:hover {
+background-color: var(--cold_black);
+}
+body header button span {
+    font-size: 20px;
+}
+
+/* second header  */
+
+body .container {
+    width: 80%;
+    margin-inline: auto;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid var(--cold_black);
+}
+body .container .category {
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+}
+body .container .category label {
+text-transform: uppercase;
+font-family: var(--font_primary);
+color: var(--cold_black);
+}
+body .container .category select {
+    width: 60%;
+    font-size: 10px;
+    height: 40px;
+    font-family: var(--font_primary);
+    outline: none;
+    border: 2px solid black ;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* my products  */
+
+.products {
+    padding-block: 20px;
+    height: 80vh;
+    overflow-y: scroll;
+    
+}
+.products .prod_info ,.products .one_product {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    font-family: var(--font_primary);
+    padding: 15px;
+    align-items: center;
+    border-bottom: 1px solid var(--cold_black);
+    
+}
+.products .prod_info div , .products .one_product div{
+width: calc(100% / 7);
+
+}
+.products .prod_info div h2 , .products .one_product div h2{
+    color: var(--cold_black);
+    text-align: center;
+    font-size: 15px;
+}
+.products .one_product div #less {
+    color: red;
+}
+.products .one_product div button {
+    width: 90%;
+    margin: auto;
+    border-radius: 12px;
+    color: white;
+    border: none;
+    font-size: 15px;
+    height: 25px;
+    padding: 5px;
+    cursor: pointer;
+}
+.products .one_product div #edit {
+background-color: var(--green_to_blue);
+}
+.products .one_product div #edit:hover {
+    background-color: #619295;
+}
+.products .one_product div #remove {
+    background-color: rgb(118, 0, 0);
+}
+.products .one_product div #remove:hover {
+    background-color: rgb(190, 70, 70);
+}
+
+
+
+/* add product section */
+
+form {
+    width: 70%;
+    margin-inline: auto;
+    margin-block: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid var(--cold_black);
+    height: 80vh;
+    border-radius: 12px;
+}
+form .space {
+    text-align: center;
+    overflow-y: scroll;
+    height: 100%;
+}
+form .space .image {
+    width: 100%;
+    margin-bottom: 20px;
+}
+form .space #upload{
+display: none;
+}
+
+form .space #upload-image:hover {
+    background-color: var(--cold_black);
+    color: white;
+    
+}
+form .space input ,form .space select{
+    margin-block: 20px;
+    width: 50%;
+    margin-inline: auto;
+    height: 40px;
+    font-size: 20px;
+    font-family: var(--font_primary);
+}
+form .space  select {
+    cursor: pointer;
+}
+form .space textarea {
+    padding: 5px;
+    max-width: 50%;
+    width: 50%;
+    margin: auto;
+    height: 100px;
+    overflow-y: scroll;
+    font-size: 14px;
+    font-family: var(--font_primary);
+}
+form .space label {
+    font-size: 20px;
+    font-family: var(--font_primary);
+    text-transform: capitalize;
+    color: var(--cold_black);
+}
+form .space input[type = "submit"]{
+    background-color: var(--green_to_blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+form .space input[type = "submit"]:hover {
+    background-color: white;
+    color: var(--cold_black);
+    border: 1px solid var(--cold_black);
+}
+form .space #upload-image {
+    border: 1px solid var(--cold_black);
+    padding: 10px;
+    cursor: pointer;
+    font-family: var(--font_primary);
+    font-size: 20px;
+    text-transform: capitalize;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}

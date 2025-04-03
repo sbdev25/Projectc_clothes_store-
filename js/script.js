@@ -1,4 +1,4 @@
-// Wait for the document to fully load
+// js after the html download
 document.addEventListener("DOMContentLoaded", function() {
     const button = document.getElementById("atc");
 
@@ -121,8 +121,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
                 <h2 class="product-price">${productTotal.toFixed(2)} DA</h2>
             `;
-    
-            cartContainer.appendChild(productDiv);
+            // put it inside cart nontainer 
+            cartContainer.appendChild(productDiv); 
         });
 
         updateCartTotals(cart, taxRate);
@@ -181,7 +181,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (newQuantity > 0) {
                     cart[index].quantity = newQuantity;
                 } else {
-                    cart.splice(index, 1);
+                    // remove it when equal 0
+                    cart.splice(index, 1); 
                 }
 
                 localStorage.setItem("cart", JSON.stringify(cart));
@@ -250,6 +251,7 @@ function disprv(){
 
 // filtering products 
 
+
 const categoryFilter = document.getElementById("categoryFilter");
 const priceFilter = document.getElementById("priceFilter");
 const fitsFilter=document.getElementById("Fits_size_filter");
@@ -293,6 +295,7 @@ products.forEach(product => {
 
 
 }
+// every time we selected called the function filterproducts 
 categoryFilter.addEventListener("change", filterProducts);
 priceFilter.addEventListener("change", filterProducts);
 fitsFilter.addEventListener("change",filterProducts)
@@ -311,8 +314,8 @@ filterProducts();
 
 document.querySelectorAll(".clickable").forEach(div => {
     div.addEventListener("click", function() {
-        const url = this.getAttribute("data-url"); // Get the link from data-url
-        window.location.href = url; // Redirect to the link
+        const url = this.getAttribute("data-url"); 
+        window.location.href = url; 
     });
 });
 

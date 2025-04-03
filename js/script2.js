@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    console.log("ok")
+    
     const form = document.querySelector("form");
 
     form.addEventListener("submit", function (event) {
         
-    console.log("ok")
         event.preventDefault(); // Prevent form submission
 
         let isValid = true; // Track form validity

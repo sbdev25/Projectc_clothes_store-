@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Clothing Store ">
+        <title>Izhomes | ManageProduct</title>
+    
+    
+    
+    
+        
+        <!-- font awsome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+         <!--font family   -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Fira+Code:wght@300..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:wght@200;400;500;600;700;800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+         
+         <!-- Helvitica  font  -->
+         <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
+                    
+    
+         <!-- optima  font -->
+         <link href="https://fonts.cdnfonts.com/css/optima" rel="stylesheet">
+         <style>
+            @import url('https://fonts.cdnfonts.com/css/optima');
+    
+            @import url('https://fonts.cdnfonts.com/css/baskerville');
+    
+            @import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');
+    
+            </style>
+    
+            <!-- Baskerville  -->
+        <link href="https://fonts.cdnfonts.com/css/baskerville" rel="stylesheet">
+        <link rel="stylesheet" href="./style2.css"> <!-- Link to CSS -->
+        
+    </head>
+<body>
+    <header>
+        <h1>My Products</h1>
+        <a href="./manage_product.html"><button>return to products <span>-</span></button></a>
+    </header>
+    <form action="" id="myform" onsubmit="event.preventDefault()";>
+        <div class="space">
+            <div class="image">
+                <img id="imgup" width="200px" height="200px" src="../products-pics/upload the image.jpg" alt="">
+            </div>
+            <label for="upload" id="upload-image">upload image</label><br>
+            <input type="file"  id="upload"><br>
+            <label for="name" id="lab-name">Product name</label><br>
+            <input type="text" name="productname" id="name"><br>
+            <label for="stock" id="lab-stock">Product stock</label><br>
+            <input type="number" name="productstock" id="stock">
+            <div class="category">
+                <label class="title-category" for="categoryFilter"> choose category </label><br>
+                <select class="category" name="category" id="categoryFilter" >
+                    <option value="FITS">FITS</option>
+                    <option value="SHOES">SHOES</option>
+                    <option value="WATCHES">WATCHES</option>
+                </select>
+            </div>
+            <label for="sec">Description</label><br>
+            <textarea name="description" id="sec"></textarea><br>
+            <label for="price" id="lab-price">product price <span id="DA">"DA"</span></label><br>
+            <input type="text" name="price" id="price">
+            <input type="submit" id="confirm" value="Add the New Product">
+        </div>
+    
+    </form>
+    
+<script src="./script4.js">
+// upload the image 
+
+</script>
+</body>
+</html>
